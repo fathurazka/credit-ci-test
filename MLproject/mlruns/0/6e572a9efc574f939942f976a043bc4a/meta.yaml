@@ -1,0 +1,14 @@
+artifact_uri: file:///home/runner/work/credit-ci-test/credit-ci-test/MLproject/mlruns/0/6e572a9efc574f939942f976a043bc4a/artifacts
+end_time: 1766349890679
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6e572a9efc574f939942f976a043bc4a
+run_name: mysterious-deer-746
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766349875614
+status: 3
+tags: []
+user_id: runner

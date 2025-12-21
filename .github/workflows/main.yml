@@ -1,0 +1,53 @@
+name: CI
+ 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+ 
+env:
+  CSV_URL: "MLproject/train_pca.csv"
+  MLFLOW_TRACKING_URI: "file:./MLproject/mlruns"
+ 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+ 
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE
+      - uses: actions/checkout@v3
+ 
+      # Setup Python 3.12.7
+      - name: Set up Python 3.12.7
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12.7"
+      
+      # Check Env Variables
+      - name: Check Env
+        run: |
+          echo $CSV_URL
+          echo $MLFLOW_TRACKING_URI
+ 
+      # Install mlflow and dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install mlflow==3.7.0 cloudpickle==3.1.2 numpy==2.3.5 pandas==2.3.3 pyarrow==22.0.0 scikit-learn==1.8.0 scipy==1.16.3
+      
+      # Run as a mlflow project
+      - name: Run mlflow project
+        run: |
+          mlflow run MLproject --env-manager=local 
+ 
+      # Save models to GitHub Repository
+      - name: Save mlruns to repo
+        run: |
+          git config --global user.name "${{ secrets.username }}"
+          git config --global user.email "${{ secrets.email }}"
+          git add MLproject/mlruns/
+          git commit -m "Save mlruns from CI run"
+          git push origin main

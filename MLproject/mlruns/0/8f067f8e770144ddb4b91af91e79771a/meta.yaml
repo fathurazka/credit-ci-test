@@ -1,0 +1,14 @@
+artifact_uri: file:///home/runner/work/credit-ci-test/credit-ci-test/MLproject/mlruns/0/8f067f8e770144ddb4b91af91e79771a/artifacts
+end_time: 1766558699083
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8f067f8e770144ddb4b91af91e79771a
+run_name: nebulous-wren-588
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1766558681137
+status: 3
+tags: []
+user_id: runner

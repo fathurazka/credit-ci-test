@@ -1,0 +1,10 @@
+artifact_location: file:///home/runner/work/credit-ci-test/credit-ci-test/MLproject/mlruns/0/models/m-8db6d61b8a7747aa88d7f625adcf1f94/artifacts
+creation_timestamp: 1766558689492
+experiment_id: '0'
+last_updated_timestamp: 1766558692097
+model_id: m-8db6d61b8a7747aa88d7f625adcf1f94
+model_type: null
+name: model
+source_run_id: 8f067f8e770144ddb4b91af91e79771a
+status: 2
+status_message: null
